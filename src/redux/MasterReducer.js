@@ -1,6 +1,7 @@
 // Initial State, Reducer, and Action Generators for Master Resume
 export const initialMaster = {
   personalInfo: { name: "", tel: "", linkedin: "", github: "", email: "", website: "", address: "" },
+  entryID: 0,
   entries: [],
 };
 
@@ -11,6 +12,9 @@ export function MasterReducer(draft, action) {
       break;
     case "personal/reset":
       draft.personalInfo = action.payload;
+      break;
+    case "general/create":
+      draft.entries.push({ ...action.payload, ID: draft.entryID++ });
       break;
     default:
       break;
@@ -38,6 +42,18 @@ export function actionPersonalReset() {
   return {
     type: "personal/reset",
     payload: { name: "", tel: "", linkedin: "", github: "", email: "", website: "", address: "" },
+  };
+}
+
+export function actionEntryCreate(formSubmitEvent) {
+  const { title, subtitle, link, date } = formSubmitEvent.target.elements;
+  return {
+    type: "general/create",
+    payload: { title: title.value.trim() || "", 
+               subtitle: subtitle.value.trim() || "", 
+               link: link.value.trim() || "", 
+               date: date.value.trim() || "" ,
+               desc: []},
   };
 }
 

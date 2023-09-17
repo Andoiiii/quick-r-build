@@ -54,61 +54,63 @@ export default function PersonalInfoDisplay() {
 
         {/* Main Display */}
         <table className="w-full max-w-full">
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200 rounded-t-md">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-tag-fill mx-1" />
-              Name:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.name}</td>
-          </tr>
+          <tbody>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200 rounded-t-md">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-tag-fill mx-1" />
+                Name:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.name}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-telephone-fill mx-1" />
-              Phone:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.tel}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-telephone-fill mx-1" />
+                Phone:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.tel}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-linkedin mx-1" />
-              LinkedIn:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.linkedin}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-linkedin mx-1" />
+                LinkedIn:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.linkedin}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-github mx-1" />
-              GitHub:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.github}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-github mx-1" />
+                GitHub:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.github}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-envelope-at-fill mx-1" />
-              Email:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.email}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-envelope-at-fill mx-1" />
+                Email:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.email}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-globe2 mx-1" />
-              Website:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.website}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-globe2 mx-1" />
+                Website:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.website}</td>
+            </tr>
 
-          <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200 rounded-b-md">
-            <td className="flex basis-1/4 shrink-0">
-              <span className="bi bi-geo-alt-fill mx-1" />
-              Location:
-            </td>
-            <td className="max-w-full break-all grow">{masterData.personalInfo.address}</td>
-          </tr>
+            <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200 rounded-b-md">
+              <td className="flex basis-1/4 shrink-0">
+                <span className="bi bi-geo-alt-fill mx-1" />
+                Location:
+              </td>
+              <td className="max-w-full break-all grow">{masterData.personalInfo.address}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
