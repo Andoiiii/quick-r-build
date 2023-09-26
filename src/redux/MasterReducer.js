@@ -21,6 +21,7 @@ export function MasterReducer(draft, action) {
   }
 }
 
+// Setting the Data for Personal Information, from the PI Editing Modal
 export function actionPersonalSet(formSubmitEvent) {
   const { name, tel, linkedin, github, email, website, address } = formSubmitEvent.target.elements;
   return {
@@ -38,6 +39,7 @@ export function actionPersonalSet(formSubmitEvent) {
   };
 }
 
+// Resets all Data for Personal Information, from the Main Display Page
 export function actionPersonalReset() {
   return {
     type: "personal/reset",
@@ -45,6 +47,7 @@ export function actionPersonalReset() {
   };
 }
 
+// Creates a new Entry, from an Entry Creation Modal
 export function actionEntryCreate(formSubmitEvent) {
   const { title, subtitle, link, date } = formSubmitEvent.target.elements;
   return {
@@ -56,15 +59,3 @@ export function actionEntryCreate(formSubmitEvent) {
                desc: []},
   };
 }
-
-// forms gonna come in like
-// const { firstName, lastName, email, division, phone, cv, description } = event.target.elements;
-//   const data = {
-//     firstName: firstName.value,
-//     lastName: lastName.value,
-//     email: email.value,
-//     division: division.value,
-//     phone: phone.value,
-//     cv: cv.value,
-//     description: description.value,
-//   };

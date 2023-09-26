@@ -7,6 +7,7 @@ import { actionEntryCreate } from "@/redux/MasterReducer";
 
 import PersonalInfoDisplay from "../_resume-components/personal-info";
 import PersonalInfoEditor from "../_resume-components/personal-edit";
+import EntryDisplay from "../_resume-components/entry-info";
 
 export default function MasterEditor() {
   const masterResume = useContext(MasterContext);
@@ -17,6 +18,8 @@ export default function MasterEditor() {
       <p>Master Interface</p>
       <div className="mx-10">
         <PersonalInfoDisplay />
+        { masterResume.entries.map( (entry) => <EntryDisplay key={entry.entryID}/>)}
+
       </div>
       <p>Debug:</p>
       <pre>{JSON.stringify(masterResume, null, 2)}</pre>

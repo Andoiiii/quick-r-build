@@ -23,6 +23,8 @@ export default function PersonalInfoDisplay() {
     setFormData(masterData.personalInfo);
   }
 
+  const [hidden, toggleHidden] = useImmer(true);
+
   return (
     <>
       <div className="bg-white text-black py-3 px-4 rounded-lg my-3">
@@ -30,7 +32,7 @@ export default function PersonalInfoDisplay() {
         <p className="text-gray-600 text-sm">Default Section</p>
 
         {/* Button Div */}
-        <div className="flex justify-between my-2">
+        <div className="flex gap-5 py-2">
           <button
             onClick={() => {
               setFormData((draft) => masterData.personalInfo);
@@ -45,14 +47,24 @@ export default function PersonalInfoDisplay() {
             onClick={() => {
               dispatchMaster(actionPersonalReset());
             }}
-            className="flex items-center gap-x-1 bg-red-500 px-2 py-0.5 rounded-md"
+            className={`flex items-center gap-x-1 bg-red-500 px-2 py-0.5 rounded-md`}
           >
             <span className="bi bi-fire" />
             <span className="text-sm">Reset</span>
           </button>
+          <button
+            onClick={() => {
+              toggleHidden((x) => !x);
+            }}
+            className={`flex items-center gap-x-1 px-2 py-0.5 rounded-md ${hidden? "bg-cyan-200" : "bg-cyan-400"}`}
+          >
+            <span className={`bi ${ hidden? "bi-chevron-up" : "bi-chevron-down"}`} />
+            <span className="text-sm">{ hidden? "Hide Details" : "Show Details"}</span>
+          </button>
         </div>
 
         {/* Main Display */}
+        { hidden?
         <table className="w-full max-w-full">
           <tbody>
             <tr className="flex flex-wrap justify-between py-2 max-w-full odd:bg-gray-50 even:bg-gray-200 rounded-t-md">
@@ -112,6 +124,7 @@ export default function PersonalInfoDisplay() {
             </tr>
           </tbody>
         </table>
+        : null}
       </div>
 
       {/* Heres the Editor Modal that comes along for the ride (and can go parallel cuz it covers the screen anyways nice) */}
